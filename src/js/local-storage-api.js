@@ -12,6 +12,6 @@ export function remove(key) {
 
 export function getKeys() {
   return Object.entries(localStorage)
-    .filter(([key]) => key !== 'theme')
+    .filter(([key]) => key !== '#theme')
     .map(([key, value]) => [key, JSON.parse(value)]);
 }
