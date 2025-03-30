@@ -6,9 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <script type="module" crossorigin src="/blended-js-05/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/blended-js-05/assets/index-sCy6btB0.css">
+    <link rel="stylesheet" crossorigin href="/blended-js-05/assets/index-B-USyNmo.css">
   </head>
-  <body class="theme-dark">
+  <body>
+    <script>
+      const savedTheme = JSON.parse(localStorage.getItem('theme'));
+      if (savedTheme === 'theme-light') {
+        document.body.classList.add('theme-light');
+      } else {
+        document.body.classList.add('theme-dark');
+      }
+    </script>
     <header class="header">
   <div class="container header-container">
     <svg
@@ -62,7 +70,7 @@
       <section>
   <div class="container">
     <ul class="tasks-list" id="task-list">
-      <li class="task-list-item">
+      <!-- <li class="task-list-item">
         <button class="task-list-item-btn">Delete</button>
         <h3>Заголовок</h3>
         <p>Текст</p>
@@ -91,7 +99,7 @@
         <button class="task-list-item-btn">Delete</button>
         <h3>Заголовок</h3>
         <p>Текст</p>
-      </li>
+      </li> -->
     </ul>
   </div>
 </section>
