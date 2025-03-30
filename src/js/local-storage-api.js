@@ -1,5 +1,8 @@
 export function add(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+  localStorage.setItem(
+    key,
+    JSON.stringify({ value: value, timestamp: Date.now() })
+  );
 }
 
 export function get(key) {
@@ -13,5 +16,11 @@ export function remove(key) {
 export function getKeys() {
   return Object.entries(localStorage)
     .filter(([key]) => key !== '#theme')
-    .map(([key, value]) => [key, JSON.parse(value)]);
+    .map(([key, value]) => [
+      key,
+      JSON.parse(value).value,
+      JSON.parse(value).timestamp,
+    ])
+    .sort((a, b) => a[2] - b[2])
+    .map(([key, value]) => [key, value]);
 }

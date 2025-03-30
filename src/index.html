@@ -9,7 +9,7 @@
   </head>
   <body>
     <script>
-      const savedTheme = JSON.parse(localStorage.getItem('#theme'));
+      const savedTheme = JSON.parse(localStorage.getItem('#theme')).value;
       if (savedTheme === 'theme-light') {
         document.body.classList.add('theme-light');
       } else {

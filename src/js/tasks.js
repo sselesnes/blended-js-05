@@ -11,6 +11,7 @@ export function add(task, description) {
 }
 
 export function init() {
+  console.log(LS.getKeys());
   LS.getKeys().forEach(([key, value]) => {
     render.add(markup.create(key, value));
   });
