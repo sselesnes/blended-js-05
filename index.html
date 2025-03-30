@@ -11,12 +11,13 @@
   <body>
     <script>
       const savedTheme = JSON.parse(localStorage.getItem('#theme'));
+      const bodyClass = document.body.classList;
       if (!savedTheme) {
-        document.body.classList.add('theme-dark');
+        bodyClass.add('theme-dark');
       } else if (savedTheme.value === 'theme-light') {
-        document.body.classList.add('theme-light');
+        bodyClass.add('theme-light');
       } else {
-        document.body.classList.add('theme-dark');
+        bodyClass.add('theme-dark');
       }
     </script>
     <header class="header">
@@ -68,7 +69,6 @@
 
 
     <main>
-      <!-- Loads the specified .html file -->
       <section>
   <div class="container">
     <ul class="tasks-list" id="task-list"></ul>
