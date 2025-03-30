@@ -21,6 +21,5 @@ export function getKeys() {
       JSON.parse(value).value,
       JSON.parse(value).timestamp,
     ])
-    .sort((a, b) => a[2] - b[2])
-    .map(([key, value]) => [key, value]);
+    .sort((a, b) => a[2] - b[2]);
 }
