@@ -7,7 +7,15 @@
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="theme-dark">
+  <body>
+    <script>
+      const savedTheme = JSON.parse(localStorage.getItem('theme'));
+      if (savedTheme === 'theme-light') {
+        document.body.classList.add('theme-light');
+      } else {
+        document.body.classList.add('theme-dark');
+      }
+    </script>
     <load src="./partials/header.html" />
 
     <main>
