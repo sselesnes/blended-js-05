@@ -4,6 +4,7 @@ import * as theme from './js/theme-switcher';
 
 theme.init();
 task.init();
+task.inputListInit();
 
 refs.headerForm.addEventListener('submit', event => {
   event.preventDefault();

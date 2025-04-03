@@ -29,3 +29,23 @@ refs.tasksList.addEventListener('click', event => {
     remove(taskElement);
   }
 });
+
+export function inputListInit() {
+  const taskList = document.querySelector('#task-list');
+  fetch('https://dummyjson.com/todos/')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      taskList.innerHTML = '';
+      data.todos.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item.todo;
+        taskList.appendChild(option);
+      });
+    })
+    .catch(error => console.log(error));
+}
